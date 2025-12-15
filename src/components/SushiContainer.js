@@ -2,7 +2,7 @@ import { useState } from "react";
 import MoreButton from "./MoreButton";
 import Sushi from "./Sushi";
 
-function SushiContainer({ sushis }) {
+function SushiContainer({ sushis, setPlates }) {
   const [i, setI] = useState(0);
   
   function onHandleMoreSushiClick() {
@@ -13,7 +13,7 @@ function SushiContainer({ sushis }) {
     <div className="belt">
       {sushis.slice(i, i+4).map((sushi) => {
         return (
-        <Sushi key={sushi.id} sushi={sushi} />  
+        <Sushi key={sushi.id} sushi={sushi} setPlates={setPlates} />  
         )
       })}
       <MoreButton onHandleMoreSushiClick={onHandleMoreSushiClick}/>

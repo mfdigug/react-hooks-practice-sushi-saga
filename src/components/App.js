@@ -8,6 +8,7 @@ function App() {
 
   const [sushis, setSushis] = useState([]);
   
+  const [plates, setPlates] = useState([]);
 
   useEffect(() => {
     fetch(API)
@@ -17,8 +18,8 @@ function App() {
 
   return (
     <div className="app">
-      <SushiContainer sushis={sushis}/>
-      <Table />
+      <SushiContainer sushis={sushis} setPlates={setPlates}/>
+      <Table plates={plates}/>
     </div>
   );
 }

@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-function Sushi({ sushi }) {
+function Sushi({ sushi, setPlates }) {
   
   const { name, img_url, price } = sushi;
-
   const [isEaten, setIsEaten] = useState(false);
 
   function handleSushiClick() {
     setIsEaten(true);
+    setPlates((plates) => [...plates, sushi]);
   }
 
   return (
