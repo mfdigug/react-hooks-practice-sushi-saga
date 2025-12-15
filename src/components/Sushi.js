@@ -1,13 +1,18 @@
 import { useState } from "react";
 
-function Sushi({ sushi, setPlates }) {
+function Sushi({ sushi, setPlates, setMonies, monies }) {
   
   const { name, img_url, price } = sushi;
   const [isEaten, setIsEaten] = useState(false);
 
   function handleSushiClick() {
-    setIsEaten(true);
-    setPlates((plates) => [...plates, sushi]);
+    if (monies-price > 0) {
+      setIsEaten(true);
+      setPlates((plates) => [...plates, sushi]);
+      setMonies((monies) => monies - price);
+    } else {
+    alert("Not enough monies!");
+    }
   }
 
   return (
