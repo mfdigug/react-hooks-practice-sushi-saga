@@ -7,12 +7,13 @@ const API = "http://localhost:3001/sushis";
 function App() {
 
   const [sushis, setSushis] = useState([]);
+  
 
   useEffect(() => {
     fetch(API)
     .then(r => r.json())
-    .then(data => setSushis(data.slice(0,4)))
-}, [sushis])
+    .then(data => setSushis(data))
+}, [])
 
   return (
     <div className="app">
