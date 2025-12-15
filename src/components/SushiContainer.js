@@ -9,8 +9,6 @@ function SushiContainer({ sushis }) {
     setI(i + 4)
   }
 
-  console.log(i)
-  
   return (
     <div className="belt">
       {sushis.slice(i, i+4).map((sushi) => {
